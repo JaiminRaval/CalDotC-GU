@@ -36,19 +36,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupCalcUI()
+//        setupCalcUI()
+    }
+    
+    
+    @IBAction func numPressed(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func operationPressed(_ sender: UIButton) {
+        
     }
 
+
     
-    func setupCalcUI() {
-        
-        num0Btn.layer.cornerRadius = 24
-        num0Btn.layer.borderWidth = 0.4
-        num0Btn.layer.borderColor = UIColor.red.cgColor
-        num0Btn.clipsToBounds = true
-        
-        
-    }
+    
+    
+    
+//    func setupCalcUI() {
+//        num0Btn.layer.cornerRadius = 24
+//        num0Btn.layer.borderWidth = 0.3
+//        num0Btn.layer.borderColor = UIColor.black.cgColor
+//        num0Btn.clipsToBounds = true
+//        
+//    }
     
 
 
