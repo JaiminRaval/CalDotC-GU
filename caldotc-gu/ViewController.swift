@@ -42,9 +42,9 @@ class ViewController: UIViewController {
     
     func setupCalcUI() {
         
-        num0Btn.layer.cornerRadius = 55
-        num0Btn.layer.borderWidth = 1.8
-        num0Btn.layer.borderColor = UIColor.systemPink.cgColor
+        num0Btn.layer.cornerRadius = 24
+        num0Btn.layer.borderWidth = 0.4
+        num0Btn.layer.borderColor = UIColor.red.cgColor
         num0Btn.clipsToBounds = true
         
         
