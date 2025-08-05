@@ -11,38 +11,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var ioField: UITextField!
     
-    @IBOutlet weak var num0Btn: UIButton!
-    @IBOutlet weak var num1Btn: UIButton!
-    @IBOutlet weak var num2Btn: UIButton!
-    @IBOutlet weak var num3Btn: UIButton!
-    @IBOutlet weak var num4Btn: UIButton!
-    @IBOutlet weak var num5Btn: UIButton!
-    @IBOutlet weak var num6Btn: UIButton!
-    @IBOutlet weak var num7Btn: UIButton!
-    @IBOutlet weak var num8Btn: UIButton!
-    @IBOutlet weak var num9Btn: UIButton!
-    @IBOutlet weak var num00Btn: UIButton!
-    
-    @IBOutlet weak var deleteBtn: UIButton!
-    @IBOutlet weak var equalsBtn: UIButton!
-    @IBOutlet weak var clearBtn: UIButton!
-    
-    @IBOutlet weak var plusBtn: UIButton!
-    @IBOutlet weak var minusBtn: UIButton!
-    @IBOutlet weak var divideBtn: UIButton!
-    @IBOutlet weak var multiplyBtn: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
 //        setupCalcUI()
     }
-    
- 
-    
-    
-    
+
     func resetTextField() {
         if let input = ioField.text {
             if input == "0" {
@@ -50,9 +23,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
-    
+ 
     @IBAction func numPressed(_ sender: UIButton) {
         guard let input = sender.titleLabel?.text else { return  }
         
@@ -138,8 +109,12 @@ class ViewController: UIViewController {
         switch operation {
         case 0:
             print("+")
-            if let appendedStr = ioField.text {
-                
+            if let temp = ioField.text {
+                if temp == "0" {
+                    
+                } else {
+                    ioField.text = "\(temp)+"
+                }
             }
         case 1:
             print("-")
@@ -159,8 +134,17 @@ class ViewController: UIViewController {
         case 4:
             print("=")
             if let appendedStr = ioField.text {
-                var partsArr = appendedStr.split(separator: "+")
+                
+                let partsArr = appendedStr.split(separator: "+")
+                var ans = 0
+                for n in partsArr {
+                    if let num = Int(n) {
+                        ans += num
+                    }
+                }
                 print("seperated vals = \(partsArr)")
+                print("ans = \(ans)")
+                ioField.text = "\(ans)"
             }
         case 5:
             print("C")

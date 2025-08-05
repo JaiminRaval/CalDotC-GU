@@ -208,7 +208,7 @@
                                     <action selector="operationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nv4-qf-0eM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uv2-WK-OlM">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uv2-WK-OlM">
                                 <rect key="frame" x="203" y="741" width="174" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.26243734359741211" green="0.57944607734680176" blue="0.91557615995407104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,7 +228,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7w-3h-dHN">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7w-3h-dHN">
                                 <rect key="frame" x="16" y="741" width="174" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.26243734359741211" green="0.57944607734680176" blue="0.91557615995407104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -245,25 +245,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="clearBtn" destination="Uv2-WK-OlM" id="WO9-9t-sJd"/>
-                        <outlet property="deleteBtn" destination="MQz-kP-aV0" id="n6m-pI-BbJ"/>
-                        <outlet property="divideBtn" destination="nHZ-Ap-YMD" id="Lxu-l8-2FA"/>
-                        <outlet property="equalsBtn" destination="k7w-3h-dHN" id="TP3-CJ-cE1"/>
-                        <outlet property="ioField" destination="pg1-wa-wvM" id="P9x-86-Yc7"/>
-                        <outlet property="minusBtn" destination="arp-6B-iqg" id="9Aw-m1-HeM"/>
-                        <outlet property="multiplyBtn" destination="Jk9-CJ-Uik" id="CYd-F1-09G"/>
-                        <outlet property="num00Btn" destination="lfB-wj-sBH" id="qdI-Sh-dbQ"/>
-                        <outlet property="num0Btn" destination="pjb-ra-08h" id="eMQ-Yf-OYd"/>
-                        <outlet property="num1Btn" destination="ZeK-WB-l8V" id="zEs-bO-ow5"/>
-                        <outlet property="num2Btn" destination="Wbm-fH-BhC" id="DUG-eW-o10"/>
-                        <outlet property="num3Btn" destination="Z9a-i7-GKK" id="eTt-XA-6JV"/>
-                        <outlet property="num4Btn" destination="CMY-g4-CcL" id="JVR-RA-EWo"/>
-                        <outlet property="num5Btn" destination="XP5-1h-HhI" id="ldP-lx-NJq"/>
-                        <outlet property="num6Btn" destination="32H-5G-SKt" id="n2n-MR-r71"/>
-                        <outlet property="num7Btn" destination="rdO-1X-SIy" id="L1F-AK-ojM"/>
-                        <outlet property="num8Btn" destination="DS2-CN-eNV" id="LB9-mB-1sA"/>
-                        <outlet property="num9Btn" destination="Dcs-4S-Fxh" id="eJd-Rb-cvF"/>
-                        <outlet property="plusBtn" destination="AbW-UV-seb" id="SZa-lv-NTW"/>
+                        <outlet property="ioField" destination="pg1-wa-wvM" id="azH-rl-jJr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
