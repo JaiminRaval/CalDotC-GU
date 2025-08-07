@@ -47,91 +47,88 @@ class ViewController: UIViewController {
             if let temp = ioField.text {
                 ioField.text = "\(temp)3"
             }
+        
         case "4":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)4"
             }
+        
         case "5":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)5"
             }
+        
         case "6":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)6"
             }
+        
         case "7":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)7"
             }
+        
         case "8":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)8"
             }
+        
         case "9":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)9"
             }
+        
         case "0":
             resetTextField()
             if let temp = ioField.text {
                 ioField.text = "\(temp)0"
             }
+        
         case "00":
             resetTextField()
             if let temp = ioField.text {
-                ioField.text = "\(temp)00"
+                if temp != "0" {
+                    ioField.text = "\(temp)00"
+                }
             }
+        
         default:
             ioField.text = "0"
             
         }
     //  debug using this something like this:
 //        print("button pressed: \(sender.titleLabel?.text!)")
-        
-        
-        
     }
-    
-    
-    
-    
-    
+ 
     @IBAction func operationPressed(_ sender: UIButton) {
         
+        //  get tags using this line of code
         let operation = sender.tag
         
         switch operation {
-        case 0:
-            print("+")
-            if let temp = ioField.text {
-                if temp == "0" {
-                    
-                } else {
-                    ioField.text = "\(temp)+"
-                }
-            }
+        
         case 1:
-            print("-")
-            if let appendedStr = ioField.text {
-
-            }
+            appendOperators(sign: "+")
+        
         case 2:
-            print("/")
-            if let appendedStr = ioField.text {
-
-            }
+            appendOperators(sign:"-")
+            
+       
         case 3:
-            print("x")
-            if let appendedStr = ioField.text {
-
-            }
+            appendOperators(sign:"/")
+            
+        
         case 4:
+            appendOperators(sign:"x")
+            
+        
+        case 5:
             print("=")
             if let appendedStr = ioField.text {
                 
@@ -146,28 +143,38 @@ class ViewController: UIViewController {
                 print("ans = \(ans)")
                 ioField.text = "\(ans)"
             }
-        case 5:
-            print("C")
-            if let appendedStr = ioField.text {
-
-            }
+        
         case 6:
+            //  resets textfield
+            ioField.text = "0"
+        
+        case 7:
             print("delete one char")
-            if let appendedStr = ioField.text {
-
+            if var appendedStr = ioField.text {
+                if appendedStr != "" {
+                    ioField.text = String(appendedStr.removeLast())
+                }
             }
            
         default:
-            break
+            print("default case called!")
+            
         }
-        
     }
 
 
+    func appendOperators(sign operatorTapped: String) {
+        
+        if let temp = ioField.text {
+            if temp != "0" {
+                ioField.text = "\(temp)\(operatorTapped)"
+            }
+        }
+    }
     
     
     
-    
+    //  func to setup UiElements once it get ready to appear:
 //    func setupCalcUI() {
 //        num0Btn.layer.cornerRadius = 24
 //        num0Btn.layer.borderWidth = 0.3
@@ -175,8 +182,6 @@ class ViewController: UIViewController {
 //        num0Btn.clipsToBounds = true
 //        
 //    }
+
     
-
-
 }
-
