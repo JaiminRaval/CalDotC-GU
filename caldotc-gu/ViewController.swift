@@ -134,17 +134,14 @@ class ViewController: UIViewController {
         case 5:
             print("=")
             if let appendedStr = ioField.text {
-                
-                let partsArr = appendedStr.split(separator: "+")
-                var ans = 0
-                for n in partsArr {
-                    if let num = Int(n) {
-                        ans += num
-                    }
+                var temp = appendedStr
+                let lChar = temp.popLast()
+                if appendedStr != "" && lChar != "+" && lChar != "-" && lChar != "/" && lChar != "x" && lChar != " " {
+                    
+                    let ans = calculateOnOperations(str: appendedStr)
+                    ioField.text = "\(ans)"
+
                 }
-                print("seperated vals = \(partsArr)")
-                print("ans = \(ans)")
-                ioField.text = "\(ans)"
             }
         
         case 6:
@@ -156,7 +153,7 @@ class ViewController: UIViewController {
             if let appendedStr = ioField.text {
                 if appendedStr != "" {
                     let updatedStr = String(appendedStr.dropLast())
-                    print("Last char = \(updatedStr)")
+//                    print("Last char = \(updatedStr)")
                     ioField.text = updatedStr
                 }
             }
@@ -165,6 +162,54 @@ class ViewController: UIViewController {
             print("default case called!")
             
         }
+    }
+    
+    //  this func gets called when you press '=' button in calc
+    func calculateOnOperations(str inputStr: String) -> Double {
+        // remove spaces
+        var parts = inputStr.components(separatedBy: CharacterSet(charactersIn: "+-*/"))
+        var operators: [Character] = []
+            
+        // get all operators
+        for char in inputStr {
+            if "+-*/".contains(char) {
+                operators.append(char)
+            }
+        }
+        
+        // converting string numbers to Double
+        var numbers = parts.compactMap { Double($0) }
+        
+        // Step 1: Do * and / first
+        var i = 0
+        while i < operators.count {
+            if operators[i] == "*" {
+                numbers[i] = numbers[i] * numbers[i + 1]
+                numbers.remove(at: i + 1)
+                operators.remove(at: i)
+            } else if operators[i] == "/" {
+                numbers[i] = numbers[i] / numbers[i + 1]
+                numbers.remove(at: i + 1)
+                operators.remove(at: i)
+            } else {
+                i += 1
+            }
+        }
+        
+        // Step 2: Do + and -
+        i = 0
+        while i < operators.count {
+            if operators[i] == "+" {
+                numbers[i] = numbers[i] + numbers[i + 1]
+            } else {
+                numbers[i] = numbers[i] - numbers[i + 1]
+            }
+            numbers.remove(at: i + 1)
+            operators.remove(at: i)
+        }
+        let ans = numbers[0]
+        return ans
+        
     }
 
 
