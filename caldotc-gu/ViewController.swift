@@ -13,9 +13,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupCalcUI()
+        
     }
 
+    
     func resetTextField() {
         if let input = ioField.text {
             if input == "0" {
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
  
     @IBAction func numPressed(_ sender: UIButton) {
         guard let input = sender.titleLabel?.text else { return  }
@@ -105,6 +107,7 @@ class ViewController: UIViewController {
     //  debug using this something like this:
 //        print("button pressed: \(sender.titleLabel?.text!)")
     }
+    
  
     @IBAction func operationPressed(_ sender: UIButton) {
         
@@ -149,10 +152,12 @@ class ViewController: UIViewController {
             ioField.text = "0"
         
         case 7:
-            print("delete one char")
-            if var appendedStr = ioField.text {
+//            print("delete one char")
+            if let appendedStr = ioField.text {
                 if appendedStr != "" {
-                    ioField.text = String(appendedStr.removeLast())
+                    let updatedStr = String(appendedStr.dropLast())
+                    print("Last char = \(updatedStr)")
+                    ioField.text = updatedStr
                 }
             }
            
@@ -165,23 +170,13 @@ class ViewController: UIViewController {
 
     func appendOperators(sign operatorTapped: String) {
         
-        if let temp = ioField.text {
-            if temp != "0" {
-                ioField.text = "\(temp)\(operatorTapped)"
+        if let orgStr = ioField.text {
+            var temp = orgStr
+            let lChar = temp.popLast()
+            if temp != "0" && lChar != "+" && lChar != "-" && lChar != "/" && lChar != "x" && lChar != " "{
+                ioField.text = "\(orgStr)\(operatorTapped)"
             }
         }
     }
-    
-    
-    
-    //  func to setup UiElements once it get ready to appear:
-//    func setupCalcUI() {
-//        num0Btn.layer.cornerRadius = 24
-//        num0Btn.layer.borderWidth = 0.3
-//        num0Btn.layer.borderColor = UIColor.black.cgColor
-//        num0Btn.clipsToBounds = true
-//        
-//    }
-
     
 }
