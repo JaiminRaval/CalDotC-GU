@@ -166,7 +166,7 @@ class ViewController: UIViewController {
     
     //  this func gets called when you press '=' button in calc
     func calculateOnOperations(str inputStr: String) -> Double {
-        // remove spaces
+        // seperating operators and storing in arr
         var parts = inputStr.components(separatedBy: CharacterSet(charactersIn: "+-*/"))
         var operators: [Character] = []
             
@@ -176,6 +176,7 @@ class ViewController: UIViewController {
                 operators.append(char)
             }
         }
+
         
         // converting string numbers to Double
         var numbers = parts.compactMap { Double($0) }
@@ -207,6 +208,7 @@ class ViewController: UIViewController {
             numbers.remove(at: i + 1)
             operators.remove(at: i)
         }
+        
         let ans = numbers[0]
         return ans
         
