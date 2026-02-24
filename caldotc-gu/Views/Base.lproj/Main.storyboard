@@ -334,12 +334,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="="/>
+                                <connections>
+                                    <action selector="calculateBtnPressed:" destination="8RQ-7H-2ZH" eventType="touchUpInside" id="ZGg-2S-aWd"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT5-UF-3Lk">
+                                <rect key="frame" x="16" y="526" width="370" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="88C-nH-sYx"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="b8s-TF-Wk8"/>
+                    <connections>
+                        <outlet property="inputOne" destination="G6v-dp-5SK" id="sNC-l7-HuD"/>
+                        <outlet property="inputTwo" destination="M2H-23-576" id="oHU-TK-qFn"/>
+                        <outlet property="outputLbl" destination="FT5-UF-3Lk" id="6sM-Xu-jRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCz-IB-0dA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
