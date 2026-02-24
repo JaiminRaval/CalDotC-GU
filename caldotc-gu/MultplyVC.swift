@@ -38,7 +38,7 @@ class MultplyVC: UIViewController {
         guard let a = Int(textInput1.text!) else { return }
         var b = Int(textInput2.text!) ?? 0
         var c = a * b
-        
+        TextOutput.text = "\(c)"
     }
 
 }
