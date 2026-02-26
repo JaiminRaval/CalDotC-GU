@@ -70,7 +70,7 @@ class CalculateVC: UIViewController {
             let b = Int(inputTwo.text!) ?? 0
             let c = handleCalculations(n0: a, n1: b)
             
-            outputLbl.text = "\(c)"
+            outputLbl.text = "\(a) \(btnPressedID) \(b) = \(c)"
         }
     }
     
